@@ -1,0 +1,129 @@
+/**
+ * @(#)FalleMidtermexam.java
+ *
+ *
+ * @author 
+ * @version 1.00 2018/1/15
+ */
+import javax.swing.JOptionPane;
+public class FalleMidtermexam {
+    
+    public static void main(String[] args) {
+    	int Income,Percent,c1, P1, P2, P3, P4, P5,P6, TF,Not, numstud;
+    	double Discount, DiscountTF;
+    	c1=0;
+    	P1=0;
+		P2=0;
+		P3=0;
+		P4=0;
+		P5=0;
+		P6=0;
+		Not=0;
+		numstud = 0;
+    	String ans="y";
+    	
+    	
+    	while (ans.equals("y")) {
+    
+    			Income = Integer.parseInt(JOptionPane.showInputDialog("Enter MONTHLY family income: "));
+    			c1++;
+    		
+	    		if(Income > 20000){
+	    			JOptionPane.showMessageDialog(null,"Sorry! \nThe student is not qualified for Discount Grant.");
+	    			Not++;
+	    		}
+    		
+	    		else if (Income >= 18000 && Income <= 20000){
+	    			TF = Integer.parseInt(JOptionPane.showInputDialog("Enter Student Total Tuition Fee: "));
+	    			Percent = 15;
+	    			Discount = TF * 0.15;
+	    			DiscountTF = TF - Discount;
+	    			P1++;
+	    			numstud++;
+	    			JOptionPane.showMessageDialog(null, "Discount Grant: " + Percent + "%" +
+	    												"\nTuition Fee: " + TF +
+	    												"\nDiscount: " + Discount +
+	    												"\nDiscounted Tuition Fee: " + DiscountTF);
+	    		}
+	    			else if (Income >= 16000 && Income <= 17999){
+	    			TF = Integer.parseInt(JOptionPane.showInputDialog("Enter Student Total Tuition Fee: "));
+	    			Percent = 20;
+	    			Discount = TF * 0.20;
+	    			DiscountTF = TF - Discount;
+	    			P2++;
+	    			numstud++;
+	    			JOptionPane.showMessageDialog(null, "Discount Grant: " + Percent + "%" +
+	    												"\nTuition Fee: " + TF +
+	    												"\nDiscount: " + Discount +
+	    												"\nDiscounted Tuition Fee: " + DiscountTF);
+	    		}
+	    			else if (Income >= 14000 && Income <= 15999){
+	    			TF = Integer.parseInt(JOptionPane.showInputDialog("Enter Student Total Tuition Fee: "));
+	    			Percent = 25;
+	    			Discount = TF * 0.25;
+	    			DiscountTF = TF - Discount;
+	    			P3++;
+	    			numstud++;
+	    			JOptionPane.showMessageDialog(null, "Discount Grant: " + Percent + "%" +
+	    												"\nTuition Fee: " + TF +
+	    												"\nDiscount: " + Discount +
+	    												"\nDiscounted Tuition Fee: " + DiscountTF);
+	    		}
+	    			else if (Income >= 12000 && Income <= 13999){
+	    			TF = Integer.parseInt(JOptionPane.showInputDialog("Enter Student Total Tuition Fee: "));
+	    			Percent = 30;
+	    			Discount = TF * 0.30;
+	    			DiscountTF = TF - Discount;
+	    			P4++;
+	    			numstud++;
+	    			JOptionPane.showMessageDialog(null, "Discount Grant: " + Percent + "%" +
+	    												"\nTuition Fee: " + TF +
+	    												"\nDiscount: " + Discount +
+	    												"\nDiscounted Tuition Fee: " + DiscountTF);
+	    		}
+	    			else if (Income >= 10000 && Income <= 11999){
+	    			TF = Integer.parseInt(JOptionPane.showInputDialog("Enter Student Total Tuition Fee: "));
+	    			Percent = 35;
+	    			Discount = TF * 0.35;
+	    			DiscountTF = TF - Discount;
+	    			P5++;
+	    			numstud++;
+	    			JOptionPane.showMessageDialog(null, "Discount Grant: " + Percent + "%" +
+	    												"\nTuition Fee: " + TF +
+	    												"\nDiscount: " + Discount +
+	    												"\nDiscounted Tuition Fee: " + DiscountTF);
+	    		}
+	    			else if (Income < 10000){
+	    			TF = Integer.parseInt(JOptionPane.showInputDialog("Enter Student Total Tuition Fee: "));
+	    			Percent = 40;
+	    			Discount = TF * 0.40;
+	    			DiscountTF = TF - Discount;
+	    			P6++;
+	    			numstud++;
+	    			JOptionPane.showMessageDialog(null, "Discount Grant: " + Percent + "%" +
+	    												"\nTuition Fee: " + TF +
+	    												"\nDiscount: " + Discount +
+	    												"\nDiscounted Tuition Fee: " + DiscountTF);
+	    		}
+	    
+	    		
+	    		
+	    		ans = JOptionPane.showInputDialog("Enter another student? [y/n]");
+				}	
+				while (ans.equals("n")){
+					JOptionPane.showMessageDialog(null, "Student Discount Tuition Summary:" + 
+												"\nNo. of Students: " + c1 +
+												"\nNo. of Students NOT Discounted: " + Not +
+												"\nNo. of Students with Discount: " + numstud +
+												"\n40% = " + P6 +
+												"\n35% = " + P5 +
+												"\n30% = " + P4 +
+												"\n25% = " + P3 +
+												"\n15% = " + P2 +
+												"\n10% = " + P1 );
+					break;
+				}	
+
+				
+    }
+}
